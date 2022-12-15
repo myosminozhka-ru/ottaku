@@ -1,5 +1,7 @@
 <template>
-  <Tutorial/>
+  <div>
+    {{ $t('test') }}
+  </div>
 </template>
 
 <script>

@@ -1,0 +1,14 @@
+{
+  "test": "test ru global",
+  "error": {
+    "empty": "пусто",
+    "maxlength": "максимальная длина |n|",
+    "minlength": "Более |n| символов",
+    "email": "не верная почта"
+  },
+  "menu": {
+    "about_us": "О нас",
+    "products": "Продукты",
+    "contacts": "Контакты"
+  }
+}
