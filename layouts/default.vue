@@ -2,6 +2,7 @@
   <div class="defaultLayout" @click="$nuxt.$emit('onLayoutClick', $event)">
     <TheHeader />
     <Nuxt />
+    <TheFooter/>
   </div>
 </template>
 

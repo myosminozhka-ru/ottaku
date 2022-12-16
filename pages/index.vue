@@ -1,6 +1,7 @@
 <template>
-  <div>
-    {{ $t('test') }}
+  <div class="IndexPage">
+    <MainBanner/>
+    <ProdSlider/>
   </div>
 </template>
 
