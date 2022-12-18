@@ -1,12 +1,12 @@
 <template>
-  <div class="TheFooter">
+  <div class="TheFooter wow fadeInUp">
     <div class="container">
       <div class="TheFooter__inner">
-        <div class="TheFooter__head">
+        <div class="TheFooter__head wow fadeInUp">
           <div class="TheFooter__suptitle">Connect with us</div>
           <div class="TheFooter__mtitle">Contacts <span></span></div>
         </div>
-        <div class="TheFooter__content">
+        <div class="TheFooter__content wow fadeInUp">
           <div class="TheFooter__left">
             <div class="TheFooter__text">
               We are  professionals of the HORECA <br> 
@@ -15,12 +15,12 @@
               innovative Korean formula
             </div>
             <div class="TheFooter__list">
-              <div class="TheFooter__item">
+              <div class="TheFooter__item wow fadeInUp">
                 <div class="TheFooter__title">e-mail:</div>
                 <a href="mailto:contact@company-name.com" class="TheFooter__mail">contact@company-name.com</a><br>
                 <a href="mailto:contact@company-name.com" class="TheFooter__mail">client@company-name.com</a>
               </div>
-              <div class="TheFooter__item">
+              <div class="TheFooter__item wow fadeInUp">
                 <div class="TheFooter__title">SOCIAL MEDIA:</div>
                 <div class="TheFooter__socials">
                   <a href="mailto:contact@company-name.com" class="TheFooter__social">
@@ -33,7 +33,7 @@
               </div>
             </div>
           </div>
-          <div class="TheFooter__right">
+          <div class="TheFooter__right wow fadeInUp">
             <div class="TheFooter__img">
               <img src="@/assets/img/footer-man.png" alt="">
             </div>
@@ -53,6 +53,10 @@ export default {
     background-color: $dark-bg;
     color: $light-text;
     padding-top: 56px;
+    background-image: url('@/assets/ico/footerPattern.svg');
+    background-size: 850px auto;
+    background-position: right top;
+    background-repeat: no-repeat;
     &__inner {
       padding-left: 72px;
       padding-right: 17px;

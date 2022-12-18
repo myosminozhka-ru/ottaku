@@ -1,5 +1,5 @@
 <template>
-  <div class="TheHeader">
+  <div class="TheHeader wow slideInDown">
     <div class="container">
       <div class="TheHeader__inner">
         <NuxtLink to="/" class="TheHeader__logo">
@@ -7,26 +7,26 @@
             <img src="@/assets/ico/logo-text.jpg" alt="logo" />
           </div>
           <div class="TheHeader__logo-img">
-            <img src="@/assets/ico/logo.png" alt="logo" />
+            <img src="@/assets/ico/logo.png" alt="logo" class=" wow fadeIn" data-wow-delay="2s"/>
           </div>
         </NuxtLink>
         <div class="TheHeader__menu">
           <div class="TheHeader__menu-list">
-            <NuxtLink to="/" class="TheHeader__menu-item">
+            <a to="#about_us" class="TheHeader__menu-item" @click.prevent="$nuxt.$emit('onMenuAnchorClick', 'about_us')">
               <span class="TheHeader__menu-title">
                 {{ $t('menu.about_us') }}
               </span>
-            </NuxtLink>
-            <NuxtLink to="/" class="TheHeader__menu-item">
+            </a>
+            <a to="#products" class="TheHeader__menu-item" @click.prevent="$nuxt.$emit('onMenuAnchorClick', 'products')">
               <span class="TheHeader__menu-title">
                 {{ $t('menu.products') }}
               </span>
-            </NuxtLink>
-            <NuxtLink to="/" class="TheHeader__menu-item">
+            </a>
+            <a to="#contacts" class="TheHeader__menu-item" @click.prevent="$nuxt.$emit('onMenuAnchorClick', 'contacts')">
               <span class="TheHeader__menu-title">
                 {{ $t('menu.contacts') }}
               </span>
-            </NuxtLink>
+            </a>
           </div>
         </div>
         <div class="TheHeader__right">
@@ -53,7 +53,8 @@
   </div>
 </template>
 <script>
-export default {}
+export default {
+}
 </script>
 <style lang="scss">
 .TheHeader {

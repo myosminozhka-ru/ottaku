@@ -1,7 +1,7 @@
 <template>
-  <div class="MainBanner">
+  <div class="MainBanner" ref="about_us">
     <div class="MainBanner__inner">
-      <div class="swiper MainBanner__swiper">
+      <div class="swiper MainBanner__swiper wow fadeIn" data-wow-delay="1s">
         <div class="swiper-wrapper MainBanner__swiper-wrapper">
           <div 
             v-for="image in shuffledImages"
@@ -12,7 +12,8 @@
           </div>
         </div>
       </div>
-      <div class="MainBanner__over">
+      <div class="MainBanner__over wow fadeInUp">
+        <div class="MainBanner__over-left-bg"></div>
         <div class="container">
           <div class="MainBanner__over-inner">
             <div class="MainBanner__pag">
@@ -37,6 +38,7 @@
             </div>
           </div>
         </div>
+        <div class="MainBanner__over-right-bg"></div>
       </div>
     </div>
   </div>
@@ -123,9 +125,7 @@ export default {
       left: 0;
       width: 100%;
       z-index: 10;
-      &::before {
-        content: "";
-        display: block;
+      &-left-bg {
         width: 33.4%;
         height: 100%;
         position: absolute;
@@ -133,7 +133,7 @@ export default {
         top: 0; 
         background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
       }
-      &::after {
+      &-right-bg {
         content: "";
         display: block;
         width: 66.6%;
@@ -142,6 +142,18 @@ export default {
         right: 0;
         top: 0; 
         background: linear-gradient(269.8deg, rgba(255, 255, 255, 0.8) 0.09%, rgba(255, 255, 255, 0.8) 55.11%, rgba(255, 255, 255, 0) 99.75%), rgba(255, 255, 255, 0.2);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('@/assets/ico/bannerPattern.svg');
+        background-size: 940px auto;
+        background-position: right bottom;
+        background-repeat: no-repeat;
       }
     }
     &__over-inner {

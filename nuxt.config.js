@@ -14,6 +14,9 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
+    script: [
+      { src: '/wow.js', defer: true },
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -25,6 +28,7 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     "@/assets/css/swiper-bundle.min.css",
+    "@/assets/css/animate.min.css",
     "@/assets/scss/_fonts.scss",
     "@/assets/scss/_normalize.scss",
     "@/assets/scss/_settings.scss",
@@ -36,6 +40,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    // { src: "@/plugins/wow.js"}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

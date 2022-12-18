@@ -3,10 +3,10 @@
 <template>
   <div class="ProdSlider">
     <div class="ProdSlider__inner">
-      <div class="ProdSlider__mtitle">
+      <div class="ProdSlider__mtitle wow fadeInUp">
         <div class="container">OTTAKU  5 in 1 EFFECT</div>
       </div>
-      <div class="swiper ProdSlider__swiper">
+      <div class="swiper ProdSlider__swiper wow fadeInUp">
         <div class="swiper-wrapper ProdSlider__swiper-wrapper">
           <div 
             v-for="(slide, index) in slides"
@@ -17,49 +17,18 @@
               <img :src="slide.path" alt="" class="desk"/>
               <img :src="slide.path2" alt="" class="mob"/>
             </div>
-            <button class="ProdSlider__button" @click="slide.isOpen = true">
+            <button class="ProdSlider__button" @click="openModalHandler(index)">
               <img src="@/assets/ico/search.svg" alt="">
               More
             </button>
             <div class="ProdSlider__modal" :class="{isOpen: slide.isOpen}">
-              <button class="ProdSlider__modal-close" @click="slide.isOpen = false">
+              <button class="ProdSlider__modal-close" @click="closeModalHandler">
                 <img src="@/assets/ico/ClearCancel.svg" alt="">
               </button>
               <div v-html="slide.left" class="ProdSlider__modal-left"></div>
               <div v-html="slide.right" class="ProdSlider__modal-right"></div>
             </div>
           </div>
-          <!-- <div class="swiper-slide ProdSlider__slide">
-            <div class="ProdSlider__img">
-              <img src="@/assets/img/prod1.png" alt="" class="desk"/>
-              <img src="@/assets/img/prod-tab1.png" alt="" class="mob"/>
-            </div>
-            <button class="ProdSlider__button">
-              <img src="@/assets/ico/search.svg" alt="">
-              More
-            </button>
-            <div class="ProdSlider__modal">
-              <button class="ProdSlider__modal-close"><img src="@/assets/ico/ClearCancel.svg" alt=""></button>
-              <div class="ProdSlider__modal-left">
-                5in1: Remove stains, remove unpleasant odors from clothes, prevent fabric damage, preserve color, universal 
-                <br><br>
-                Products for the whole family. 0+. Hypoallergenic 
-              </div>
-              <div class="ProdSlider__modal-right">
-                
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="swiper-slide ProdSlider__slide">
-            <div class="ProdSlider__img">
-              <img src="@/assets/img/prod2.png" alt="" class="desk"/>
-              <img src="@/assets/img/prod-tab2.png" alt="" class="mob"/>
-            </div>
-            <button class="ProdSlider__button">
-              <img src="@/assets/ico/search.svg" alt="">
-              More
-            </button>
-          </div> -->
         </div>
         <div class="ProdSlider__pag">
           <div class="swiper-pagination"></div>
@@ -78,7 +47,7 @@ export default {
     return {
       slides: [
         { 
-          id: 1,
+          id: 0,
           value: "img",
           isOpen: false,
           path: require("@/assets/img/prod1.png"),
@@ -87,7 +56,7 @@ export default {
           right: this.$t('slides[0].right')
         },
         {
-          id: 2,
+          id: 1,
           value: "img",
           isOpen: false,
           path: require("@/assets/img/prod2.png"),
@@ -98,11 +67,20 @@ export default {
       ]
     }
   },
+  methods: {
+    openModalHandler(index) {
+      this.closeModalHandler()
+      this.slides[index].isOpen = true
+    },
+    closeModalHandler() {
+      this.slides.forEach(i => i.isOpen = false)
+    }
+  },
   mounted() {
     const ProdSlider = new Swiper('.ProdSlider__swiper', {
-      loop: true,
+      loop: false,
       effect: 'fade',
-      grabCursor: true,
+      grabCursor: false,
       modules: [Navigation, Pagination, EffectFade, Autoplay],
       pagination: {
         el: '.ProdSlider .swiper-pagination',
@@ -126,7 +104,10 @@ export default {
     margin: 0 auto;
     position: relative;
     padding-top: 36px;
-    padding-bottom: 47px;
+    background-image: url('@/assets/ico/prodPattern.svg');
+    background-size: auto 100%;
+    background-position: right top;
+    background-repeat: no-repeat;
     &__mtitle {
       position: absolute;
       top: 62px;
@@ -140,10 +121,15 @@ export default {
     }
     &__slide {
       position: relative;
+      padding-bottom: 47px;
+      opacity: 0;
+      &.swiper-slide-active {
+        opacity: 1;
+        z-index: 20;
+      }
     }
     &__img {
       height: 635px;
-      background-color: #fff;
       .mob {
         display: none;
       }
@@ -155,15 +141,16 @@ export default {
     }
     &__button {
       position: absolute;
-      bottom: 10px;
+      bottom: 53px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 20px;
-      padding-right: 30px;
+      padding-right: 35px;
       background-color: $accent;
+      font-size: 20px;
       color: $light-text;
       z-index: 10;
       img {
@@ -176,7 +163,7 @@ export default {
     &__modal {
       position: absolute;
       left: 50%;
-      bottom: 0;
+      bottom: 63px;
       transform: translateX(-250%);
       z-index: 20;
       max-width: 610px;
@@ -186,6 +173,7 @@ export default {
       color: $dark-text;
       display: flex;
       justify-content: space-between;
+      transition: transform 300ms;
       box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.25), 35px 275px 111px rgba(0, 0, 0, 0.01), 19px 155px 94px rgba(0, 0, 0, 0.05), 9px 69px 69px rgba(0, 0, 0, 0.09);
       &.isOpen {
         transform: translateX(-50%);
