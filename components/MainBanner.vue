@@ -176,7 +176,8 @@ export default {
         height: 14px;
         border: 1px solid #fff;
         background-color: transparent;
-        margin-right: 9px;
+        margin: 0 !important;
+        margin-right: 9px !important;
         opacity: 1;
         &:last-child {
           margin-right: 0;
@@ -199,6 +200,93 @@ export default {
       font-size: 16px;
       line-height: 125.5%;
       padding: 63px 0;
+    }
+    @media (max-width: $tab) {
+      &__slide {
+        height: 608px;
+        max-height: none;
+      }
+      &__over {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        &-left-bg {
+          display: none;
+        }
+        &-right-bg {
+          width: 370px;
+        }
+        &::after {
+          display: none;
+        }
+      }
+      &__pag {
+        width: auto;
+        flex-grow: 1;
+        padding-bottom: 12px;
+      }
+      &__content {
+        padding: 0;
+        margin: 0;
+        display: block;
+        width: 370px - 28;
+      }
+      &__img {
+        max-width: 279px;
+      }
+      &__text {
+        max-width: none;
+        font-size: 14px;
+        line-height: 125.5%;
+        padding: 0 37px;
+        padding-bottom: 50px;
+      }
+      
+    }
+    @media (max-width: $mob) {
+      &__slide {
+        height: 367px;
+      }
+      &__over {
+        position: relative;
+        top: -35px;
+        &-right-bg {
+          display: none;
+        }
+      }
+      &__over-inner {
+        display: block;
+        background: linear-gradient(269.8deg, rgba(255, 255, 255, 0.8) 0.09%, rgba(255, 255, 255, 0.8) 55.11%, rgba(255, 255, 255, 0) 99.75%), rgba(255, 255, 255, 0.2);
+      }
+      &__pag {
+        position: absolute;
+        top: -23px;
+        width: auto;
+        flex-grow: 1;
+        justify-content: flex-start;
+        padding-bottom: 12px;
+        .swiper-pagination {
+          width: auto;
+        }
+        .swiper-pagination-bullet {
+          width: 9px;
+          height: 9px;
+          margin-right: 5px !important;
+        }
+      }
+      &__content {
+        width: 100%;
+      }
+      &__img {
+        max-width: 269px;
+      }
+      &__text {
+        font-size: 16px;
+        padding: 0 17px 8px 34px;
+      }
+      
     }
   }
 </style>

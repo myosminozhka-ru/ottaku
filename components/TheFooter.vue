@@ -9,7 +9,7 @@
         <div class="TheFooter__content wow fadeInUp">
           <div class="TheFooter__left">
             <div class="TheFooter__text">
-              We are  professionals of the HORECA <br> 
+              We are  professionals of the HORECA <br>
               community, <br>
               creating, especially for your home, certified <br>
               innovative Korean formula
@@ -76,6 +76,7 @@ export default {
       align-items: center;
       justify-content: space-between;
       span {
+        flex-shrink: 0;
         width: 24px;
         display: inline-block;
       }
@@ -136,6 +137,112 @@ export default {
     &__img {
       width: 475px;
       margin-top: -46px;
+    }
+    @media (max-width: $tab) {
+      background-color: $dark-bg;
+      color: $light-text;
+      padding-top: 64px;
+      background-image: url('@/assets/ico/footerPattern.svg');
+      background-size: 1002px auto;
+      background-position: right -29px top;
+      background-repeat: no-repeat;
+      &__inner {
+        padding-left: 8px;
+        padding-right: 0;
+      }
+      &__suptitle {
+        font-size: 15px;
+        margin-bottom: 13px;
+      }
+      &__mtitle {
+        font-size: 42px;
+        margin-bottom: 46px;
+        span {
+          width: 44px;
+        }
+        &::after {
+          margin-top: 3px;
+        }
+      }
+      &__content {
+        display: flex;
+        justify-content: space-between;
+      }
+      &__text {
+        font-family: 'Vela Sans';
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 125%;
+        margin-bottom: 52px;
+      }
+      &__item {
+        margin-bottom: 49px;
+      }
+      &__title {
+        font-family: 'Vela Sans';
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $accent;
+        font-size: 14px;
+        line-height: 125%;
+        margin-bottom: 18px;
+      }
+      &__mail {
+        font-family: 'Vela Sans';
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 145%;
+        letter-spacing: -0.01em;
+        text-transform: lowercase;
+      }
+      &__social {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin-right: 7px;
+        &:last-child {
+          margin-right: 0;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      &__img {
+        width: 363px;
+        margin-top: 4px;
+      }
+
+    }
+    @media (max-width: $mob) {
+      background-image: none;
+      &__inner {
+        padding-left: 8px;
+        padding-right: 0;
+      }
+      &__suptitle {
+        font-size: 11px;
+        margin-bottom: 13px;
+      }
+      &__mtitle {
+        font-size: 32px;
+        margin-bottom: 40px;
+        span {
+          width: 28px;
+        }
+        &::after {
+          margin-top: 5px;
+        }
+      }
+      &__content {
+        display: block;
+        padding-bottom: 40px;
+      }
+      &__img {
+        width: 100%;
+        margin-top: -28px;
+      }  
     }
   }
 </style>

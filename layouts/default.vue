@@ -37,10 +37,10 @@ export default {
 .defaultLayout {
   padding-top: 96px;
   @media (max-width: $tab) {
-    padding-top: 96px;
+    padding-top: 80px;
   }
   @media (max-width: $mob) {
-    padding-top: 96px;
+    padding-top: 53px;
   }
 }
 </style>

@@ -95,5 +95,16 @@ export default {
       font-weight: 700;
       color: $light-text;
     }
+    @media (max-width: $mob) {
+      &__button {
+        padding: 18px;
+      }
+      &__ico {
+        margin-right: 0;
+      }
+      &__text {
+        display: none;
+      }
+    }
   }
 </style>

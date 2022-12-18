@@ -33,8 +33,8 @@
         <div class="ProdSlider__pag">
           <div class="swiper-pagination"></div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev" v-show="sliderButtonsShow"></div>
+        <div class="swiper-button-next" v-show="sliderButtonsShow"></div>
       </div>
     </div>
   </div>
@@ -64,16 +64,19 @@ export default {
           left: this.$t('slides[1].left'),
           right: this.$t('slides[1].right')
         },
-      ]
+      ],
+      sliderButtonsShow: true,
     }
   },
   methods: {
     openModalHandler(index) {
       this.closeModalHandler()
       this.slides[index].isOpen = true
+      this.sliderButtonsShow = false
     },
     closeModalHandler() {
       this.slides.forEach(i => i.isOpen = false)
+      this.sliderButtonsShow = true
     }
   },
   mounted() {
@@ -226,6 +229,11 @@ export default {
       display: flex;
       justify-content: center;
       align-items: flex-end;
+      position: absolute;
+      left: 0;
+      bottom: 32px;
+      width: 100%;
+      z-index: 20;
       .swiper-pagination {
         width: 100%;
         position: static;
@@ -233,7 +241,7 @@ export default {
       .swiper-pagination-bullet {
         width: 14px;
         height: 14px;
-        border: 1px solid #fff;
+        border: 1px solid $accent;
         background-color: transparent;
         margin-right: 9px;
         opacity: 1;
@@ -242,7 +250,7 @@ export default {
         }
       }
       .swiper-pagination-bullet-active {
-        background-color: #fff;
+        background-color: $accent;
       }
     }
     .swiper-button-next,
@@ -259,6 +267,154 @@ export default {
     }
     .swiper-button-next {
       right: 38px;
+    }
+    @media (max-width: $tab) {
+      padding-top: 36px;
+      background-image: url('@/assets/ico/prodPattern.svg');
+      background-size: auto 100%;
+      background-position: right -250px top;
+      background-repeat: no-repeat;
+      &__mtitle {
+        top: 67px;
+        padding-left: 0;
+      }
+      &__slide {
+        padding-bottom: 177px;
+      }
+      &__img {
+        height: 664px;
+        .mob {
+          display: block;
+        }
+        .desk {
+          display: none;
+        }
+      }
+      &__button {
+        bottom: 88px;
+        left: 50%;
+        padding: 20px;
+        padding-right: 35px;
+        font-size: 20px;
+      }
+      &__modal {
+        bottom: 63px;
+        max-width: 332px;
+        padding: 10px;
+        flex-direction: column-reverse;
+      }
+      &__modal-close {
+        right: 10px;
+        top: 10px;
+      }
+      &__modal-left {
+        font-size: 14px;
+        max-width: none;
+        padding-bottom: 10px;
+      }
+      &__modal-right {
+        max-width: none;
+        margin-bottom: 30px;
+        p {
+          font-size: 24px;
+        }
+        table {
+          padding: 15px 10px;
+          td:first-child {
+            font-size: 12px;
+          }
+          td:last-child {
+            font-size: 12px;
+          }
+        }
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        top: auto;
+        bottom: 140px;
+        &::after {
+          font-size: 50px;
+        }
+      }
+
+    }
+    @media (max-width: $mob) {
+      padding-top: 36px;
+      background-image: url('@/assets/ico/prodPattern.svg');
+      background-size: auto 100%;
+      background-position: right -250px top;
+      background-repeat: no-repeat;
+      &__mtitle {
+        top: 13px;
+        text-align: center;
+      }
+      &__slide {
+        padding-bottom: 224px;
+      }
+      &__img {
+        height: 364px;
+      }
+      &__button {
+        bottom: 76px;
+        left: 50%;
+        width: calc(100% - 40px);
+        padding: 20px;
+        padding-right: 35px;
+        font-size: 20px;
+      }
+      &__modal {
+        bottom: 74px;
+        max-width: none;
+        width: calc(100% - 40px);
+        padding: 10px;
+        flex-direction: column-reverse;
+      }
+      &__modal-close {
+        right: 10px;
+        top: 10px;
+      }
+      &__modal-left {
+        font-size: 14px;
+        max-width: none;
+        padding-bottom: 10px;
+      }
+      &__modal-right {
+        max-width: none;
+        margin-bottom: 30px;
+        p {
+          font-size: 20px;
+        }
+        table {
+          padding: 15px 10px;
+          td:first-child {
+            font-size: 15px;
+          }
+          td:last-child {
+            font-size: 12px;
+          }
+        }
+      }
+      .swiper-pagination-bullet {
+        width: 9px;
+        height: 9px;
+        margin: 0 !important;
+        margin-right: 5px !important;
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        top: auto;
+        bottom: 166px;
+        &::after {
+          font-size: 30px;
+        }
+      }
+      .swiper-button-next {
+        right: 10px;
+      }
+      .swiper-button-prev {
+        left: 10px;
+      }
+
     }
   }
 </style>
