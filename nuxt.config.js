@@ -2,6 +2,11 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  server: {
+    host: "0.0.0.0", // default: localhost // (0.0.0.0 for open on mob) // 127.0.0.1 for prod
+    port: 3021,
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'ottaku',
