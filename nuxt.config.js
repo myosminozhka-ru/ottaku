@@ -14,6 +14,9 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
+    script: [
+      { src: '/wow.js', defer: true },
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -24,6 +27,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    "@/assets/css/swiper-bundle.min.css",
+    "@/assets/css/animate.min.css",
     "@/assets/scss/_fonts.scss",
     "@/assets/scss/_normalize.scss",
     "@/assets/scss/_settings.scss",
@@ -35,6 +40,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    // { src: "@/plugins/wow.js"}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -51,7 +57,7 @@ export default {
   ],
 
   i18n: {
-    defaultLocale: "ru",
+    defaultLocale: "ko",
     vueI18nLoader: true,
     lazy: true,
     langDir: 'lang/',
@@ -59,8 +65,8 @@ export default {
     detectBrowserLanguage: false,
     locales: [
       {
-        code: 'ru',
-        file: 'ru.json',
+        code: 'en',
+        file: 'en.json',
       },
       {
         code: 'ko',
@@ -71,5 +77,15 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+    // fix to work with swiperjs 8 - need to run with standalone:true. That can make some troubles.
+    standalone: true,
+    extend(config, ctx) {
+      // fix to work with swiperjs 8 add needed deps. you can get them from error when doing nuxt generate
+      config.externals = [
+        {
+          encoding: "encoding",
+        },
+      ];
+    },
+  },
 }
