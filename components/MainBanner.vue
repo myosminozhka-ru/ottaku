@@ -1,7 +1,9 @@
+<i18n src="@/lang/components/MainBanner.json"></i18n> 
+
 <template>
-  <div class="MainBanner" ref="about_us">
+  <div class="MainBanner" id="about_us">
     <div class="MainBanner__inner">
-      <div class="swiper MainBanner__swiper wow fadeIn" data-wow-delay="1s">
+      <div class="swiper MainBanner__swiper wow fadeIn">
         <div class="swiper-wrapper MainBanner__swiper-wrapper">
           <div 
             v-for="image in shuffledImages"
@@ -12,7 +14,7 @@
           </div>
         </div>
       </div>
-      <div class="MainBanner__over wow fadeInUp">
+      <div class="MainBanner__over wow fadeInUp" data-wow-delay="1s">
         <div class="MainBanner__over-left-bg"></div>
         <div class="container">
           <div class="MainBanner__over-inner">
@@ -23,18 +25,7 @@
               <div class="MainBanner__img">
                 <img src="@/assets/img/banner1.png" alt="" />
               </div>
-              <div class="MainBanner__text">
-                Your home is safe, comfortable, cosy, confidence or... purity.
-                <br />
-                <br />
-                Professionals from Hospitality and Restorante communitypropose to
-                yuo high-performance home detergents with guaranteed results.
-                <br />
-                <br />
-                We always wish to have the comforts of home in our hotels,
-                restaurants and cafes, and we know best how to keep it clean and
-                safe.
-              </div>
+              <div class="MainBanner__text" v-html="$t('text')"></div>
             </div>
           </div>
         </div>
@@ -98,9 +89,9 @@ export default {
         type: 'bullets',
         clickable: true,
       },
-      // autoplay: {
-      //   delay: 5000,
-      // },
+      autoplay: {
+        delay: 5000,
+      },
     })
   },
 }

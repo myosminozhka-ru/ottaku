@@ -1,5 +1,6 @@
 <template>
   <div class="defaultLayout" @click="$nuxt.$emit('onLayoutClick', $event)">
+    <PageLoading/>
     <TheHeader />
     <Nuxt />
     <TheFooter ref="contacts"/>
@@ -23,7 +24,7 @@ export default {
     }
   },
   mounted() {
-    this.$nuxt.$on('onMenuAnchorClick', (name) => {
+    this.$nuxt.$on('onLoaded', (name) => {
       if (name === 'contacts') this.scrollMeTo(name)
     });
   },

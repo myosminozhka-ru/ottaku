@@ -1,14 +1,9 @@
 {
-  "test": "test en global",
-  "error": {
-    "empty": "empty",
-    "maxlength": "maxlength |n|",
-    "minlength": "minlength |n|",
-    "email": "email"
-  },
   "menu": {
     "about_us": "About us",
     "products": "Products",
     "contacts": "Contacts"
-  }
+  },
+  "more": "More",
+  "up": "Up"
 }

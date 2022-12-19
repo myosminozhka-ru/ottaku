@@ -1,7 +1,7 @@
 <i18n src="@/lang/components/ProdSlider.json"></i18n> 
 
 <template>
-  <div class="ProdSlider">
+  <div class="ProdSlider" id="products">
     <div class="ProdSlider__inner">
       <div class="ProdSlider__mtitle wow fadeInUp">
         <div class="container">OTTAKU  5 in 1 EFFECT</div>
@@ -19,7 +19,7 @@
             </div>
             <button class="ProdSlider__button" @click="openModalHandler(index)">
               <img src="@/assets/ico/search.svg" alt="">
-              More
+              {{ $t('more')}}
             </button>
             <div class="ProdSlider__modal" :class="{isOpen: slide.isOpen}">
               <button class="ProdSlider__modal-close" @click="closeModalHandler">
@@ -116,7 +116,7 @@ export default {
       top: 62px;
       width: 100%;
       z-index: 10;
-      font-family: 'Vela Sans';
+      font-family: '$secondary-font-family';
       font-weight: 700;
       font-size: 26px;
       line-height: 120.02%;
@@ -156,6 +156,10 @@ export default {
       font-size: 20px;
       color: $light-text;
       z-index: 10;
+      transition: background 300ms;
+      &:hover {
+        background-color: $accent-hover;
+      }
       img {
         width: 24px;
         height: 24px;
@@ -208,7 +212,7 @@ export default {
         background: linear-gradient(154.22deg, #84CDB3 16.29%, rgba(132, 205, 179, 0.3) 144.79%);
         td:first-child {
           text-align: right;
-          font-family: 'Vela Sans';
+          font-family: '$secondary-font-family';
           font-weight: 700;
           font-size: 15px;
           line-height: 125.5%;
@@ -248,6 +252,10 @@ export default {
         &:last-child {
           margin-right: 0;
         }
+        transition: background 300ms;
+        &:hover {
+          background-color: $accent-hover;
+        }
       }
       .swiper-pagination-bullet-active {
         background-color: $accent;
@@ -270,10 +278,9 @@ export default {
     }
     @media (max-width: $tab) {
       padding-top: 36px;
-      background-image: url('@/assets/ico/prodPattern.svg');
+      background-image: url('@/assets/ico/prodPatternTab.svg');
       background-size: auto 100%;
-      background-position: right -250px top;
-      background-repeat: no-repeat;
+      background-position: right top;
       &__mtitle {
         top: 67px;
         padding-left: 0;
@@ -340,10 +347,8 @@ export default {
     }
     @media (max-width: $mob) {
       padding-top: 36px;
-      background-image: url('@/assets/ico/prodPattern.svg');
       background-size: auto 100%;
-      background-position: right -250px top;
-      background-repeat: no-repeat;
+      background-position: center top;
       &__mtitle {
         top: 13px;
         text-align: center;

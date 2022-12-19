@@ -1,9 +1,9 @@
 {
-  "test": "test ko global",
-  "error": {
-    "empty": "ko пусто",
-    "maxlength": "ko максимальная длина |n|",
-    "minlength": "ko Более |n| символов",
-    "email": "ko не верная почта"
-  }
+  "menu": {
+    "about_us": "약",
+    "products": "프로젝트",
+    "contacts": "연락처"
+  },
+  "more": "더 보기",
+  "up": "위로"
 }

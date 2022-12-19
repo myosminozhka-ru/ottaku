@@ -11,7 +11,7 @@
             <img src="@/assets/ico/up.svg" alt="">
           </div>
           <div class="ToUp__text">
-            Up
+            {{ $t('up') }}
           </div>
         </button>
       </div>
@@ -79,6 +79,10 @@ export default {
       background-color: $accent;
       padding: 15px 44px 15px 22px;
       cursor: pointer;
+      transition: background 300ms;
+      &:hover {
+        background-color: $accent-hover;
+      }
     }
     &__ico {
       width: 33px;
@@ -91,7 +95,7 @@ export default {
       }
     }
     &__text {
-      font-family: 'Vela Sans';
+      font-family: '$secondary-font-family';
       font-weight: 700;
       color: $light-text;
     }
