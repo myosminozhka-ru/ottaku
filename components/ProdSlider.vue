@@ -19,9 +19,9 @@
             </div>
             <button class="ProdSlider__button" @click="openModalHandler(index)">
               <img src="@/assets/ico/search.svg" alt="more">
-              {{ $t('more')}}
+              {{ $t('more') }}
             </button>
-            <div class="ProdSlider__modal" :class="{isOpen: slide.isOpen}">
+            <div class="ProdSlider__modal" :class="{isOpen: modals[index].isOpen}">
               <button class="ProdSlider__modal-close" @click="closeModalHandler">
                 <img src="@/assets/ico/ClearCancel.svg" alt="close">
               </button>
@@ -49,20 +49,26 @@ export default {
         { 
           id: 0,
           value: "OTTAKU  5 in 1 EFFECT",
-          isOpen: false,
-          path: require("@/assets/img/prod1.png"),
-          path2: require("@/assets/img/prod-tab1.png"),
+          path: require("@/assets/img/prod1.webp"),
+          path2: require("@/assets/img/prod-tab1.webp"),
           left: this.$t('slides[0].left'),
           right: this.$t('slides[0].right')
         },
         {
           id: 1,
           value: "OTTAKU  5 in 1 EFFECT",
-          isOpen: false,
-          path: require("@/assets/img/prod2.png"),
-          path2: require("@/assets/img/prod-tab2.png"),
+          path: require("@/assets/img/prod2.webp"),
+          path2: require("@/assets/img/prod-tab2.webp"),
           left: this.$t('slides[1].left'),
           right: this.$t('slides[1].right')
+        },
+      ],
+      modals: [
+        {
+          isOpen: false,
+        },
+        {
+          isOpen: false,
         },
       ],
       sliderButtonsShow: true,
@@ -71,20 +77,21 @@ export default {
   methods: {
     openModalHandler(index) {
       this.closeModalHandler()
-      this.slides[index].isOpen = true
+      this.modals[index].isOpen = true
       this.sliderButtonsShow = false
+      this.$nextTick().then(() => window.ProdSlider.update())
     },
     closeModalHandler() {
-      this.slides.forEach(i => i.isOpen = false)
+      this.modals.forEach(i => i.isOpen = false)
       this.sliderButtonsShow = true
     }
   },
   mounted() {
-    const ProdSlider = new Swiper('.ProdSlider__swiper', {
+    window.ProdSlider = new Swiper('.ProdSlider__swiper', {
       loop: false,
       effect: 'fade',
       grabCursor: false,
-      modules: [Navigation, Pagination, EffectFade, Autoplay],
+      modules: [Navigation, Pagination, EffectFade],
       pagination: {
         el: '.ProdSlider .swiper-pagination',
         type: 'bullets',
@@ -98,7 +105,7 @@ export default {
         prevEl: '.ProdSlider .swiper-button-prev',
       },
     })
-    ProdSlider.on('slideChange', this.closeModalHandler);
+    window.ProdSlider.on('slideChange', this.closeModalHandler);
   },
 }
 </script>
@@ -126,9 +133,10 @@ export default {
     &__slide {
       position: relative;
       padding-bottom: 66px;
-      opacity: 0 !important;
+      opacity: 0;
+      z-index: 0;
       &.swiper-slide-active {
-        opacity: 1 !important;
+        opacity: 1;
         z-index: 20;
       }
     }

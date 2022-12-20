@@ -21,7 +21,6 @@ export default {
     ],
     script: [
       { src: '/wow.js', defer: true },
-      { src: '/smooth.js', defer: true },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -46,7 +45,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: "@/plugins/smooth.js", ssr: false,}
+    // { src: "@/plugins/smooth.js", ssr: false,}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

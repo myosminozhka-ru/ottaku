@@ -4,11 +4,11 @@
       <div class="TheHeader__inner">
         <NuxtLink to="/" class="TheHeader__logo">
           <div class="TheHeader__logo-text">
-            <img src="@/assets/ico/logo-text.jpg" alt="logo" />
+            <img src="@/assets/ico/logo-text.webp" alt="logo" />
           </div>
           <div class="TheHeader__logo-img">
             <img
-              src="@/assets/ico/logo.png"
+              src="@/assets/ico/logo.webp"
               alt="logo"
               class="wow fadeIn"
               :class="{hide: isScrolled}"

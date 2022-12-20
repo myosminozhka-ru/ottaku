@@ -38,7 +38,7 @@
           </div>
           <div class="TheFooter__right wow fadeInUp">
             <div class="TheFooter__img">
-              <img src="@/assets/img/footer-man.png" alt="OTTAKU  5 in 1 EFFECT">
+              <img src="@/assets/img/footer-man.webp" alt="OTTAKU  5 in 1 EFFECT">
             </div>
           </div>
         </div>

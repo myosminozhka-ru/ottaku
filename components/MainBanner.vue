@@ -23,7 +23,7 @@
             </div>
             <div class="MainBanner__content">
               <div class="MainBanner__img">
-                <img src="@/assets/img/banner1.png" alt="OTTAKU  5 in 1 EFFECT" />
+                <img src="@/assets/img/banner1.webp" alt="OTTAKU  5 in 1 EFFECT" />
               </div>
               <div class="MainBanner__text" v-html="$t('text')"></div>
             </div>
@@ -44,17 +44,17 @@ export default {
         { 
           id: 1,
           value: "ottaku",
-          path: require("@/assets/img/slide1.jpg"),
+          path: require("@/assets/img/slide1.webp"),
         },
         {
           id: 2,
           value: "ottaku",
-          path: require("@/assets/img/slide2.jpg"),
+          path: require("@/assets/img/slide2.webp"),
         },
         {
           id: 3,
           value: "ottaku",
-          path: require("@/assets/img/slide3.jpg"),
+          path: require("@/assets/img/slide3.webp"),
         },
       ],
       shuffledImages: null
