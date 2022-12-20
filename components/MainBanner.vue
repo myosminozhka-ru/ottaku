@@ -249,7 +249,7 @@ export default {
       }
       &__over-inner {
         display: block;
-        background: linear-gradient(269.8deg, rgba(255, 255, 255, 0.8) 0.09%, rgba(255, 255, 255, 0.8) 55.11%, rgba(255, 255, 255, 0) 99.75%), rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.75);
       }
       &__pag {
         position: absolute;
