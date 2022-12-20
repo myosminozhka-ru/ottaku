@@ -133,11 +133,11 @@ export default {
     &__slide {
       position: relative;
       padding-bottom: 66px;
-      opacity: 0;
-      z-index: 0;
+      opacity: 0 !important;
+      z-index: 0 !important;
       &.swiper-slide-active {
-        opacity: 1;
-        z-index: 20;
+        opacity: 1 !important;
+        z-index: 20 !important;
       }
     }
     &__img {
