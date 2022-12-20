@@ -14,7 +14,7 @@ export default {
       const top = element.offsetTop;
       
       window.scrollTo({
-        top,
+        top: top - 70,
         left: 0,
         behavior: 'smooth',
       })

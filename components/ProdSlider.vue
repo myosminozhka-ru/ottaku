@@ -1,10 +1,10 @@
 <i18n src="@/lang/components/ProdSlider.json"></i18n> 
 
 <template>
-  <div class="ProdSlider" id="products">
+  <section class="ProdSlider" id="products">
     <div class="ProdSlider__inner">
       <div class="ProdSlider__mtitle wow fadeInUp">
-        <div class="container">OTTAKU  5 in 1 EFFECT</div>
+        <h1 class="container">OTTAKU  5 in 1 EFFECT</h1>
       </div>
       <div class="swiper ProdSlider__swiper wow fadeInUp">
         <div class="swiper-wrapper ProdSlider__swiper-wrapper">
@@ -14,16 +14,16 @@
             class="swiper-slide ProdSlider__slide"
           >
             <div class="ProdSlider__img">
-              <img :src="slide.path" alt="" class="desk"/>
-              <img :src="slide.path2" alt="" class="mob"/>
+              <img :src="slide.path" :alt="slide.value" class="desk"/>
+              <img :src="slide.path2" :alt="slide.value" class="mob"/>
             </div>
             <button class="ProdSlider__button" @click="openModalHandler(index)">
-              <img src="@/assets/ico/search.svg" alt="">
+              <img src="@/assets/ico/search.svg" alt="more">
               {{ $t('more')}}
             </button>
             <div class="ProdSlider__modal" :class="{isOpen: slide.isOpen}">
               <button class="ProdSlider__modal-close" @click="closeModalHandler">
-                <img src="@/assets/ico/ClearCancel.svg" alt="">
+                <img src="@/assets/ico/ClearCancel.svg" alt="close">
               </button>
               <div v-html="slide.left" class="ProdSlider__modal-left"></div>
               <div v-html="slide.right" class="ProdSlider__modal-right"></div>
@@ -37,7 +37,7 @@
         <div class="swiper-button-next" v-show="sliderButtonsShow"></div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 <script>
 import { Swiper, Navigation, Pagination, EffectFade, Autoplay } from 'swiper'
@@ -48,7 +48,7 @@ export default {
       slides: [
         { 
           id: 0,
-          value: "img",
+          value: "OTTAKU  5 in 1 EFFECT",
           isOpen: false,
           path: require("@/assets/img/prod1.png"),
           path2: require("@/assets/img/prod-tab1.png"),
@@ -57,7 +57,7 @@ export default {
         },
         {
           id: 1,
-          value: "img",
+          value: "OTTAKU  5 in 1 EFFECT",
           isOpen: false,
           path: require("@/assets/img/prod2.png"),
           path2: require("@/assets/img/prod-tab2.png"),
@@ -98,6 +98,7 @@ export default {
         prevEl: '.ProdSlider .swiper-button-prev',
       },
     })
+    ProdSlider.on('slideChange', this.closeModalHandler);
   },
 }
 </script>
@@ -116,7 +117,7 @@ export default {
       top: 62px;
       width: 100%;
       z-index: 10;
-      font-family: '$secondary-font-family';
+      font-family: $secondary-font-family;
       font-weight: 700;
       font-size: 26px;
       line-height: 120.02%;
@@ -124,10 +125,10 @@ export default {
     }
     &__slide {
       position: relative;
-      padding-bottom: 47px;
-      opacity: 0;
+      padding-bottom: 66px;
+      opacity: 0 !important;
       &.swiper-slide-active {
-        opacity: 1;
+        opacity: 1 !important;
         z-index: 20;
       }
     }
@@ -144,7 +145,7 @@ export default {
     }
     &__button {
       position: absolute;
-      bottom: 53px;
+      bottom: 71px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
@@ -171,7 +172,7 @@ export default {
       position: absolute;
       left: 50%;
       bottom: 63px;
-      transform: translateX(-250%);
+      transform: translateX(-100vw);
       z-index: 20;
       max-width: 610px;
       width: 100%;
@@ -212,7 +213,7 @@ export default {
         background: linear-gradient(154.22deg, #84CDB3 16.29%, rgba(132, 205, 179, 0.3) 144.79%);
         td:first-child {
           text-align: right;
-          font-family: '$secondary-font-family';
+          font-family: $secondary-font-family;
           font-weight: 700;
           font-size: 15px;
           line-height: 125.5%;
@@ -235,7 +236,7 @@ export default {
       align-items: flex-end;
       position: absolute;
       left: 0;
-      bottom: 32px;
+      bottom: 20px;
       width: 100%;
       z-index: 20;
       .swiper-pagination {
@@ -305,6 +306,7 @@ export default {
         font-size: 20px;
       }
       &__modal {
+        transform: translateX(-150vw);
         bottom: 63px;
         max-width: 332px;
         padding: 10px;

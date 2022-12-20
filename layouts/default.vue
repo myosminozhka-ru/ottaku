@@ -17,14 +17,14 @@ export default {
       const top = element.offsetTop;
 
       window.scrollTo({
-        top,
+        top: top - 70,
         left: 0,
         behavior: 'smooth',
       })
     }
   },
   mounted() {
-    this.$nuxt.$on('onLoaded', (name) => {
+    this.$nuxt.$on('onMenuAnchorClick', (name) => {
       if (name === 'contacts') this.scrollMeTo(name)
     });
   },
