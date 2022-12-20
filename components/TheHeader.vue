@@ -11,7 +11,7 @@
               src="@/assets/ico/logo.png"
               alt="logo"
               class="wow fadeIn"
-              :class="{hide: isScrollde}"
+              :class="{hide: isScrolled}"
               data-wow-delay="2s"
             />
           </div>
@@ -21,7 +21,7 @@
             <a
               to="#about_us"
               class="TheHeader__menu-item"
-              @click.prevent="$nuxt.$emit('onMenuAnchorClick', 'about_us')"
+              @click.prevent="$nuxt.$emit('onMenuAnchorClick', 'about_us'), isMenuOpen = false"
             >
               <span class="TheHeader__menu-title">
                 {{ $t('menu.about_us') }}
@@ -30,7 +30,7 @@
             <a
               to="#products"
               class="TheHeader__menu-item"
-              @click.prevent="$nuxt.$emit('onMenuAnchorClick', 'products')"
+              @click.prevent="$nuxt.$emit('onMenuAnchorClick', 'products'), isMenuOpen = false"
             >
               <span class="TheHeader__menu-title">
                 {{ $t('menu.products') }}
@@ -39,7 +39,7 @@
             <a
               to="#contacts"
               class="TheHeader__menu-item"
-              @click.prevent="$nuxt.$emit('onMenuAnchorClick', 'contacts')"
+              @click.prevent="$nuxt.$emit('onMenuAnchorClick', 'contacts'), isMenuOpen = false"
             >
               <span class="TheHeader__menu-title">
                 {{ $t('menu.contacts') }}
@@ -57,7 +57,7 @@
               ENG
             </NuxtLink>
           </div>
-          <div class="TheHeader__socials">
+          <!-- <div class="TheHeader__socials">
             <a href="/" target="_blank" class="TheHeader__social">
               <svg width="16" height="33" viewBox="0 0 16 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15.9997 5.47777L13.0996 5.47914C10.8257 5.47914 10.3854 6.63656 10.3854 8.33514V12.0804H15.8085L15.8066 17.9467H10.3854V33H4.72895V17.9467H0V12.0804H4.72895V7.75454C4.72895 2.73391 7.59226 0 11.7737 0L16 0.00720172L15.9997 5.47777Z"/>
@@ -68,7 +68,7 @@
                 <path d="M9.16667 0C4.10483 0 0 4.10483 0 9.16667V23.8333C0 28.8952 4.10483 33 9.16667 33H23.8333C28.8952 33 33 28.8952 33 23.8333V9.16667C33 4.10483 28.8952 0 23.8333 0H9.16667ZM27.5 3.66667C28.512 3.66667 29.3333 4.488 29.3333 5.5C29.3333 6.512 28.512 7.33333 27.5 7.33333C26.488 7.33333 25.6667 6.512 25.6667 5.5C25.6667 4.488 26.488 3.66667 27.5 3.66667ZM16.5 7.33333C21.5618 7.33333 25.6667 11.4382 25.6667 16.5C25.6667 21.5618 21.5618 25.6667 16.5 25.6667C11.4382 25.6667 7.33333 21.5618 7.33333 16.5C7.33333 11.4382 11.4382 7.33333 16.5 7.33333ZM16.5 11C15.0413 11 13.6424 11.5795 12.6109 12.6109C11.5795 13.6424 11 15.0413 11 16.5C11 17.9587 11.5795 19.3576 12.6109 20.3891C13.6424 21.4205 15.0413 22 16.5 22C17.9587 22 19.3576 21.4205 20.3891 20.3891C21.4205 19.3576 22 17.9587 22 16.5C22 15.0413 21.4205 13.6424 20.3891 12.6109C19.3576 11.5795 17.9587 11 16.5 11Z"/>
               </svg>
             </a>
-          </div>
+          </div> -->
           <button
             class="TheHeader__burger"
             :class="{ isActive: isMenuOpen }"
@@ -90,15 +90,15 @@ export default {
   data() {
     return {
       isMenuOpen: false,
-      isScrollde: false,
+      isScrolled: false,
     }
   },
   methods: {
     scrollHandler(e) {
       if (window.pageYOffset > 130) {
-        this.isScrollde = true
+        this.isScrolled = true
       } else {
-        this.isScrollde = false
+        this.isScrolled = false
       }
     },
   },
@@ -169,7 +169,6 @@ export default {
   &__langs {
     font-family: $secondary-font-family;
     color: $grey;
-    margin-right: 50px;
   }
   &__lang {
     &:hover {
@@ -207,8 +206,10 @@ export default {
     display: none;
   }
   @media (max-width: $tab) {
+    &__inner {
+      min-height: 80px;
+    }
     &__logo {
-      padding-top: 22px;
       width: 264px;
     }
     &__logo-text {
@@ -331,6 +332,9 @@ export default {
     }
   }
   @media (max-width: $mob) {
+    &__inner {
+      min-height: 53px;
+    }
     &__logo {
       padding-top: 12px;
       padding-bottom: 6px;

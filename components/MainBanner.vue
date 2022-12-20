@@ -1,7 +1,7 @@
 <i18n src="@/lang/components/MainBanner.json"></i18n> 
 
 <template>
-  <div class="MainBanner" id="about_us">
+  <section class="MainBanner" id="about_us">
     <div class="MainBanner__inner">
       <div class="swiper MainBanner__swiper wow fadeIn">
         <div class="swiper-wrapper MainBanner__swiper-wrapper">
@@ -10,7 +10,7 @@
             :key="image.id"
             class="swiper-slide MainBanner__slide"
           >
-            <img :src="image.path" alt="" />
+            <img :src="image.path" :alt="image.value" />
           </div>
         </div>
       </div>
@@ -23,7 +23,7 @@
             </div>
             <div class="MainBanner__content">
               <div class="MainBanner__img">
-                <img src="@/assets/img/banner1.png" alt="" />
+                <img src="@/assets/img/banner1.png" alt="OTTAKU  5 in 1 EFFECT" />
               </div>
               <div class="MainBanner__text" v-html="$t('text')"></div>
             </div>
@@ -32,7 +32,7 @@
         <div class="MainBanner__over-right-bg"></div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 <script>
 import { Swiper, Navigation, Pagination, EffectFade, Autoplay } from 'swiper'
@@ -43,17 +43,17 @@ export default {
       images: [
         { 
           id: 1,
-          value: "img",
+          value: "ottaku",
           path: require("@/assets/img/slide1.jpg"),
         },
         {
           id: 2,
-          value: "img",
+          value: "ottaku",
           path: require("@/assets/img/slide2.jpg"),
         },
         {
           id: 3,
-          value: "img",
+          value: "ottaku",
           path: require("@/assets/img/slide3.jpg"),
         },
       ],

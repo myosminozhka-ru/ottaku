@@ -95,7 +95,7 @@ export default {
       }
     }
     &__text {
-      font-family: '$secondary-font-family';
+      font-family: $secondary-font-family;
       font-weight: 700;
       color: $light-text;
     }

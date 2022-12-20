@@ -1,12 +1,12 @@
 <i18n src="@/lang/components/TheFooter.json"></i18n> 
 
 <template>
-  <div class="TheFooter wow fadeInUp" id="contacts">
+  <footer class="TheFooter wow fadeInUp" id="contacts">
     <div class="container">
       <div class="TheFooter__inner">
         <div class="TheFooter__head wow fadeInUp">
-          <div class="TheFooter__suptitle">{{ $t('suptitle') }}</div>
-          <div class="TheFooter__mtitle">{{ $t('title') }} <span></span></div>
+          <h3 class="TheFooter__suptitle">{{ $t('suptitle') }}</h3>
+          <h2 class="TheFooter__mtitle">{{ $t('title') }} <span></span></h2>
         </div>
         <div class="TheFooter__content wow fadeInUp">
           <div class="TheFooter__left">
@@ -15,9 +15,9 @@
               <div class="TheFooter__item wow fadeInUp">
                 <div class="TheFooter__title">e-mail:</div>
                 <a href="mailto:contact@company-name.com" target="_blank" class="TheFooter__mail">contact@company-name.com</a><br>
-                <a href="mailto:contact@company-name.com" target="_blank" class="TheFooter__mail">client@company-name.com</a>
+                <a href="mailto:client@company-name.com" target="_blank" class="TheFooter__mail">client@company-name.com</a>
               </div>
-              <div class="TheFooter__item wow fadeInUp">
+              <!-- <div class="TheFooter__item wow fadeInUp">
                 <div class="TheFooter__title">SOCIAL MEDIA:</div>
                 <div class="TheFooter__socials">
                   <a href="mailto:contact@company-name.com" target="_blank" class="TheFooter__social">
@@ -33,18 +33,18 @@
                     </svg>
                   </a>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="TheFooter__right wow fadeInUp">
             <div class="TheFooter__img">
-              <img src="@/assets/img/footer-man.png" alt="">
+              <img src="@/assets/img/footer-man.png" alt="OTTAKU  5 in 1 EFFECT">
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </footer>
 </template>
 <script>
 export default {
@@ -70,7 +70,7 @@ export default {
       letter-spacing: 0.35em;
     }
     &__mtitle {
-      font-family: '$secondary-font-family';
+      font-family: $secondary-font-family;
       font-weight: 300;
       font-size: 52px;
       line-height: 120.02%;
@@ -98,7 +98,7 @@ export default {
       justify-content: space-between;
     }
     &__text {
-      font-family: '$secondary-font-family';
+      font-family: $secondary-font-family;
       font-weight: 300;
       font-size: 14px;
       line-height: 125%;
@@ -108,7 +108,7 @@ export default {
       margin-bottom: 49px;
     }
     &__title {
-      font-family: '$secondary-font-family';
+      font-family: $secondary-font-family;
       font-weight: 500;
       text-transform: uppercase;
       color: $accent;
@@ -117,7 +117,7 @@ export default {
       margin-bottom: 18px;
     }
     &__mail {
-      font-family: '$secondary-font-family';
+      font-family: $secondary-font-family;
       font-weight: 500;
       font-size: 14px;
       line-height: 145%;
@@ -184,7 +184,7 @@ export default {
         justify-content: space-between;
       }
       &__text {
-        font-family: '$secondary-font-family';
+        font-family: $secondary-font-family;
         font-weight: 300;
         font-size: 14px;
         line-height: 125%;
@@ -194,7 +194,7 @@ export default {
         margin-bottom: 49px;
       }
       &__title {
-        font-family: '$secondary-font-family';
+        font-family: $secondary-font-family;
         font-weight: 500;
         text-transform: uppercase;
         color: $accent;
@@ -203,7 +203,7 @@ export default {
         margin-bottom: 18px;
       }
       &__mail {
-        font-family: '$secondary-font-family';
+        font-family: $secondary-font-family;
         font-weight: 500;
         font-size: 14px;
         line-height: 145%;
