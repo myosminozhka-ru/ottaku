@@ -278,7 +278,7 @@ export default {
       right: 38px;
     }
     @media (max-width: $tab) {
-      padding-top: 36px;
+      padding-top: 86px;
       background-image: url('@/assets/ico/prodPatternTab.svg');
       background-size: auto 100%;
       background-position: right top;
@@ -347,8 +347,11 @@ export default {
       }
 
     }
-    @media (max-width: $mob) {
+    @media (max-width: $tab - 250) {
       padding-top: 36px;
+    }
+    @media (max-width: $mob) {
+      padding-top: 66px;
       background-size: auto 100%;
       background-position: center top;
       &__mtitle {
@@ -422,6 +425,9 @@ export default {
         left: 10px;
       }
 
+    }
+    @media (max-width: $mob - 150) {
+      padding-top: 36px;
     }
   }
 </style>

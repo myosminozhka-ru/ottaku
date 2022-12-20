@@ -271,6 +271,8 @@ export default {
         width: 100%;
       }
       &__img {
+        position: relative;
+        top: -20px;
         max-width: 269px;
       }
       &__text {
