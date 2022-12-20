@@ -8,35 +8,6 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
-//Scroll
-::-webkit-scrollbar-track {
-  border-radius: 4px;
-
-  overflow: hidden;
-}
-::-webkit-scrollbar {
-  background: #e6e6e6;
-  position: absolute;
-  width: 6px;
-  border-radius: 4px;
-}
-::-webkit-scrollbar:hover {
-  display: block;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #8bc63e;
-  border-radius: 4px;
-}
-::-webkit-scrollbar:horizontal {
-  height: 6px;
-  border-radius: 4px;
-}
-
-* {
-  scrollbar-color: #8bc63e #e6e6e6;
-  scrollbar-width: thin;
-}
-
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
