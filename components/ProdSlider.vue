@@ -49,16 +49,16 @@ export default {
         { 
           id: 0,
           value: "OTTAKU  5 in 1 EFFECT",
-          path: require("@/assets/img/prod1.webp"),
-          path2: require("@/assets/img/prod-tab1.webp"),
+          path: require("@/assets/img/prod1.png"),
+          path2: require("@/assets/img/prod-tab1.png"),
           left: this.$t('slides[0].left'),
           right: this.$t('slides[0].right')
         },
         {
           id: 1,
           value: "OTTAKU  5 in 1 EFFECT",
-          path: require("@/assets/img/prod2.webp"),
-          path2: require("@/assets/img/prod-tab2.webp"),
+          path: require("@/assets/img/prod2.png"),
+          path2: require("@/assets/img/prod-tab2.png"),
           left: this.$t('slides[1].left'),
           right: this.$t('slides[1].right')
         },
