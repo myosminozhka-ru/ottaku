@@ -2,6 +2,7 @@
 
 <template>
   <section class="MainBanner" id="about_us">
+    <h1 class="visually-hidden">Ottaku — new Korean detergents</h1>
     <div class="MainBanner__inner">
       <div class="swiper MainBanner__swiper wow fadeIn">
         <div class="swiper-wrapper MainBanner__swiper-wrapper">
@@ -22,6 +23,7 @@
               <div class="swiper-pagination"></div>
             </div>
             <div class="MainBanner__content">
+              <h2 class="visually-hidden">{{ $t('menu.about_us') }}</h2>
               <div class="MainBanner__img">
                 <img src="@/assets/img/banner1.png" alt="OTTAKU  5 in 1 EFFECT" />
               </div>

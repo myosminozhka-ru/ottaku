@@ -2,9 +2,11 @@
 
 <template>
   <section class="ProdSlider" id="products">
+    <h2 class="visually-hidden">{{ $t('menu.products') }}</h2>
     <div class="ProdSlider__inner">
       <div class="ProdSlider__mtitle wow fadeInUp">
-        <h1 class="container">OTTAKU  5 in 1 EFFECT</h1>
+        <h3 class="container" :class="{'visually-hidden': this.activeIndex !== 0}">OTTAKU  5 in 1 EFFECT</h3>
+        <h3 class="container" :class="{'visually-hidden': this.activeIndex !== 1}">OTTAKU BIO COMPLEX</h3>
       </div>
       <div class="swiper ProdSlider__swiper wow fadeInUp">
         <div class="swiper-wrapper ProdSlider__swiper-wrapper">
@@ -72,6 +74,7 @@ export default {
         },
       ],
       sliderButtonsShow: true,
+      activeIndex: 0,
     }
   },
   methods: {
@@ -84,6 +87,7 @@ export default {
     closeModalHandler() {
       this.modals.forEach(i => i.isOpen = false)
       this.sliderButtonsShow = true
+      this.$nextTick().then(() => window.ProdSlider.update())
     }
   },
   mounted() {
@@ -106,6 +110,7 @@ export default {
       },
     })
     window.ProdSlider.on('slideChange', this.closeModalHandler);
+    window.ProdSlider.on('slideChange', (data) => this.activeIndex = data.activeIndex);
   },
 }
 </script>
