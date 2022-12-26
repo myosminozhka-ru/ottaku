@@ -14,8 +14,7 @@
             <div class="TheFooter__list">
               <div class="TheFooter__item wow fadeInUp">
                 <div class="TheFooter__title">e-mail:</div>
-                <a href="mailto:contact@company-name.com" target="_blank" class="TheFooter__mail">contact@company-name.com</a><br>
-                <a href="mailto:client@company-name.com" target="_blank" class="TheFooter__mail">client@company-name.com</a>
+                <a href="mailto:info@ottaku.kr" target="_blank" class="TheFooter__mail">info@ottaku.kr</a><br>
               </div>
               <!-- <div class="TheFooter__item wow fadeInUp">
                 <div class="TheFooter__title">SOCIAL MEDIA:</div>
