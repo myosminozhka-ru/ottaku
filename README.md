@@ -8,13 +8,16 @@ $ yarn install
 
 # serve with hot reload at localhost:3000
 $ yarn dev
+# yarn devW for Windows
 
 # build for production and launch server
 $ yarn build
 $ yarn start
+# yarn buildW && yarn startW for Windows
 
 # generate static project
 $ yarn generate
+# yarn generateW for Windows
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
