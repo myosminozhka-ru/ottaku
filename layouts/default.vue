@@ -1,5 +1,5 @@
 <template>
-  <div class="defaultLayout" @click="$nuxt.$emit('onLayoutClick', $event)">
+  <div class="defaultLayout">
     <PageLoading/>
     <TheHeader />
     <Nuxt />
@@ -11,26 +11,6 @@
 
 <script>
 export default {
-  methods: {
-    scrollMeTo(refName) {
-      const element = this.$refs[refName].$el;
-      const top = element.offsetTop;
-
-      window.scrollTo({
-        top: top - 70,
-        left: 0,
-        behavior: 'smooth',
-      })
-    }
-  },
-  mounted() {
-    this.$nuxt.$on('onMenuAnchorClick', (name) => {
-      if (name === 'contacts') this.scrollMeTo(name)
-    });
-  },
-  beforeDestroy() {
-    this.$nuxt.$off('onMenuAnchorClick');
-  },
 }
 </script>
 

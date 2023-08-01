@@ -22,7 +22,7 @@
             <a
               to="#about_us"
               class="TheHeader__menu-item"
-              @click.prevent="$nuxt.$emit('onMenuAnchorClick', 'about_us'), isMenuOpen = false"
+              @click.prevent="scrollMeTo('about_us'), isMenuOpen = false"
             >
               <span class="TheHeader__menu-title">
                 {{ $t('menu.about_us') }}
@@ -31,7 +31,7 @@
             <a
               to="#products"
               class="TheHeader__menu-item"
-              @click.prevent="$nuxt.$emit('onMenuAnchorClick', 'products'), isMenuOpen = false"
+              @click.prevent="scrollMeTo('products'), isMenuOpen = false"
             >
               <span class="TheHeader__menu-title">
                 {{ $t('menu.products') }}
@@ -40,7 +40,7 @@
             <a
               to="#contacts"
               class="TheHeader__menu-item"
-              @click.prevent="$nuxt.$emit('onMenuAnchorClick', 'contacts'), isMenuOpen = false"
+              @click.prevent="scrollMeTo('contacts'), isMenuOpen = false"
             >
               <span class="TheHeader__menu-title">
                 {{ $t('menu.contacts') }}
@@ -102,6 +102,16 @@ export default {
         this.isScrolled = false
       }
     },
+    scrollMeTo(refName) {
+      const element = document.querySelector(`#${refName}`)
+      const top = element?.offsetTop;
+
+      element ? window.scrollTo({
+        top: top - 70,
+        left: 0,
+        behavior: 'smooth',
+      }) : null;
+    }
   },
   mounted() {
     window.addEventListener('scroll', this.scrollHandler)

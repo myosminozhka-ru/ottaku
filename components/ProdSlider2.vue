@@ -223,17 +223,7 @@ export default {
         .swiper-pagination-bullet {
           width: 14px;
           height: 14px;
-          border: 1px solid $accent;
-          background-color: transparent;
           margin-right: 9px;
-          opacity: 1;
-          &:last-child {
-            margin-right: 0;
-          }
-          transition: background 300ms;
-          &:hover {
-            background-color: $accent-hover;
-          }
         }
       }
       .swiper-button-next,

@@ -46,8 +46,8 @@
                   <div class="TheFooter__lang-title">
                     Choose your country
                   </div>
-                  <div class="TheFooter__langs" @click="langDropOpen = false">
-                    <NuxtLink :to="switchLocalePath('ko')">
+                  <div class="TheFooter__langs" @click="langHandler">
+                    <NuxtLink v-if="$i18n.locale !== 'ko'" :to="switchLocalePath('ko')">
                       Korea
                     </NuxtLink>
                     <NuxtLink :to="switchLocalePath('en')">
@@ -59,9 +59,9 @@
                     <NuxtLink :to="switchLocalePath('en')">
                       Indonesia
                     </NuxtLink>
-                    <NuxtLink :to="switchLocalePath('ru')">
+                    <a href="https://ottaku.ru/" target="_blank">
                       Russia
-                    </NuxtLink>
+                    </a>
                   </div>
               </div>
             </div>
@@ -82,8 +82,13 @@ export default {
     return {
       langDropOpen: false,
     }
+  },
+  methods: {
+    langHandler() {
+      this.langDropOpen = false
+      scrollTo(0, 0)
+    }
   }
-  
 }
 </script>
 <style lang="scss">
