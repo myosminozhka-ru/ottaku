@@ -5,28 +5,28 @@
 }
 
 //Scroll
-// ::-webkit-scrollbar-track {
-//   border-radius: 4px;
+::-webkit-scrollbar-track {
+  border-radius: 4px;
 
-//   overflow: hidden;
-// }
-// ::-webkit-scrollbar {
-//   background: #e6e6e6;
-//   position: absolute;
-//   width: 6px;
-//   border-radius: 4px;
-// }
-// ::-webkit-scrollbar:hover {
-//   display: block;
-// }
-// ::-webkit-scrollbar-thumb {
-//   background-color: $accent;
-//   border-radius: 4px;
-// }
-// ::-webkit-scrollbar:horizontal {
-//   height: 6px;
-//   border-radius: 4px;
-// }
+  overflow: hidden;
+}
+::-webkit-scrollbar {
+  background: #e6e6e6;
+  position: absolute;
+  width: 6px;
+  border-radius: 4px;
+}
+::-webkit-scrollbar:hover {
+  display: block;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $accent;
+  border-radius: 4px;
+}
+::-webkit-scrollbar:horizontal {
+  height: 6px;
+  border-radius: 4px;
+}
 
 * {
   scrollbar-color: #8bc63e #e6e6e6;
