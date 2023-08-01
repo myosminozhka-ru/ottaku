@@ -133,7 +133,7 @@ export default {
       font-weight: 700;
       font-size: 26px;
       line-height: 120.02%;
-      padding-left: 98px;
+      padding-left: 0;
     }
     &__slide {
       position: relative;

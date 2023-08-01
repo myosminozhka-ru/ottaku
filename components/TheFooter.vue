@@ -34,6 +34,37 @@
                 </div>
               </div> -->
             </div>
+            <div class="TheFooter__lang">
+              <button class="TheFooter__lang-btn" @click="langDropOpen = true">
+                <img src="@/assets/ico/country.svg" alt="contries">
+                Country
+              </button>
+              <div v-if="langDropOpen" class="TheFooter__lang-drop">
+                  <div class="TheFooter__lang-close" @click="langDropOpen = false">
+                    <img src="@/assets/ico/ClearCancel.svg" alt="close">
+                  </div>
+                  <div class="TheFooter__lang-title">
+                    Choose your country
+                  </div>
+                  <div class="TheFooter__langs" @click="langDropOpen = false">
+                    <NuxtLink :to="switchLocalePath('ko')">
+                      Korea
+                    </NuxtLink>
+                    <NuxtLink :to="switchLocalePath('en')">
+                      Malaysia
+                    </NuxtLink>
+                    <NuxtLink :to="switchLocalePath('en')">
+                      Japan
+                    </NuxtLink>
+                    <NuxtLink :to="switchLocalePath('en')">
+                      Indonesia
+                    </NuxtLink>
+                    <NuxtLink :to="switchLocalePath('ru')">
+                      Russia
+                    </NuxtLink>
+                  </div>
+              </div>
+            </div>
           </div>
           <div class="TheFooter__right wow fadeInUp">
             <div class="TheFooter__img">
@@ -47,6 +78,11 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      langDropOpen: false,
+    }
+  }
   
 }
 </script>
@@ -153,6 +189,51 @@ export default {
       width: 475px;
       margin-top: -46px;
     }
+    &__lang {
+      position: relative;
+    }
+    &__lang-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 47px;
+      font-size: 20px;
+      background-color: $accent;
+      img {
+        width: 24px;
+        margin-right: 8px;
+      }
+    }
+    &__lang-drop {
+      position: absolute;
+      left: 0;
+      bottom: 100%;
+      padding: 40px;
+      min-width: 346px;
+      background-color: #fff;
+      color: #000;
+    }
+    &__lang-close {
+      width: 24px;
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      cursor: pointer;
+    }
+    &__lang-title {
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+    &__langs {
+      display: flex;
+      flex-direction: column;
+      a {
+        margin-bottom: 8px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
     @media (max-width: $tab) {
       background-color: $dark-bg;
       color: $light-text;
@@ -227,6 +308,11 @@ export default {
         width: 363px;
         margin-top: 4px;
       }
+      &__lang-drop {
+        padding: 40px 24px;
+        min-width: 320px;
+        width: 320px;
+      }
 
     }
     @media (max-width: $mob) {
@@ -257,7 +343,7 @@ export default {
       }
       &__img {
         width: 100%;
-        margin-top: -28px;
+        margin-top: 47px;
       }  
     }
   }
