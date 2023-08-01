@@ -8,6 +8,7 @@
           </div>
           <div class="TheHeader__logo-img">
             <img
+              v-if="$route.name === 'index___ko' || $route.name === 'index___en'"
               src="@/assets/ico/logo.png"
               alt="logo"
               class="wow fadeIn"

@@ -71,7 +71,7 @@ export default {
   i18n: {
     defaultLocale: "ko",
     vueI18nLoader: true,
-    lazy: true,
+    lazy: false,
     langDir: 'lang/',
     // differentDomains: true,
     detectBrowserLanguage: false,

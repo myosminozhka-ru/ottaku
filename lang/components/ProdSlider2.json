@@ -1,0 +1,29 @@
+{
+  "en": {
+    "slides": [
+      { 
+        "text": "Powerful washing detergents removing old stains, odors and germs."
+      },
+      {
+        "text": "An individual special solution to ensure a high standard of living and cleanliness of the space around"
+      },
+      {
+        "text": "",
+        "img": "@/assets/img/text-img.png"
+      }
+    ]
+  },
+  "ko": {
+    "slides": [
+      { 
+        "text": "오래된 얼룩,냄새 및 세균을 제거하는 강력한 세척 세제"
+      },
+      {
+        "text": "높은 생활 수준과 주변 공간의 청결을 보장하는 개별 특수 솔루션"
+      },
+      {
+        "text": "인증된 혁신적인 전문 포뮬러"
+      }
+    ]
+  }
+}
