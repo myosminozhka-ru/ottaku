@@ -10,7 +10,7 @@
     </div>
     <div class="VideoPage__video">
       <div class="container">
-        <video src="@/assets/video/video1.mp4" controls="true" autoplay></video>
+        <video src="/video/video1.mp4" controls="true" autoplay></video>
       </div>
     </div>
   </div>
