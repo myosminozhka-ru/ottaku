@@ -48,7 +48,7 @@
                   </div>
                   <div class="TheFooter__langs" @click="langHandler">
                     <NuxtLink v-if="$i18n.locale !== 'ko'" :to="switchLocalePath('ko')">
-                      Korea
+                      South Korea
                     </NuxtLink>
                     <NuxtLink :to="switchLocalePath('en')">
                       Malaysia
