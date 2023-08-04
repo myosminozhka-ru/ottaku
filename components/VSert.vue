@@ -8,24 +8,24 @@
         <div class="VSert__item">
           <img src="@/assets/img/sert1.jpg" alt="" >
         </div>
-        <div class="VSert__item">
+        <!-- <div class="VSert__item">
           <img src="@/assets/img/sert2.jpg" alt="" >
         </div>
         <div class="VSert__item">
           <img src="@/assets/img/sert3.jpg" alt="" >
-        </div>
+        </div> -->
       </div>
       <div class="swiper VSert__swiper wow fadeInUp">
         <div class="swiper-wrapper VSert__swiper-wrapper">
           <div class="swiper-slide VSert__slide">
               <img src="@/assets/img/sert1.jpg" alt="" >
           </div>
-          <div class="swiper-slide VSert__slide">
+          <!-- <div class="swiper-slide VSert__slide">
               <img src="@/assets/img/sert2.jpg" alt="" >
           </div>
           <div class="swiper-slide VSert__slide">
               <img src="@/assets/img/sert3.jpg" alt="" >
-          </div>
+          </div> -->
         </div>
         <div class="VSert__controller">
           <div class="swiper-button-prev"></div>
@@ -95,18 +95,19 @@ export default {
       grid-gap: 25px;
     }
     &__item {
-      &:nth-child(2) {    
-        padding-top: 150px;
-        grid-column: 2/3;
-        grid-row: 1/3;
-      }
-      &:nth-child(3) {
-        display: flex;
-        justify-content: flex-end;
-        img {
-          width: 66.6%;
-        }
-      }
+      grid-column: 1/3;
+      // &:nth-child(2) {    
+      //   padding-top: 150px;
+      //   grid-column: 2/3;
+      //   grid-row: 1/3;
+      // }
+      // &:nth-child(3) {
+      //   display: flex;
+      //   justify-content: flex-end;
+      //   img {
+      //     width: 66.6%;
+      //   }
+      // }
     }
     &__swiper {
       display: none;

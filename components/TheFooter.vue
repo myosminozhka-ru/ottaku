@@ -60,7 +60,7 @@
                       Indonesia
                     </NuxtLink>
                     <a href="https://ottaku.ru/" target="_blank">
-                      Russia
+                      Russian Federation
                     </a>
                   </div>
               </div>
