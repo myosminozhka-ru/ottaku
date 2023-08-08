@@ -96,6 +96,11 @@ export default {
     }
     &__item {
       grid-column: 1/3;
+      img {
+        max-width: 50%;
+        display: block;
+        margin: 0 auto;
+      }
       // &:nth-child(2) {    
       //   padding-top: 150px;
       //   grid-column: 2/3;
