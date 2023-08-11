@@ -1,9 +1,9 @@
 <template>
   <div class="IndexPage">
     <MainBanner ref="about_us"/>
-    <VSert/>
     <ProdSlider ref="products"/>
     <ProdSlider2/>
+    <VSert/>
   </div>
 </template>
 
